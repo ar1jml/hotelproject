@@ -1,5 +1,5 @@
 
-<<template>
+<template>
   <header class="header">
 
 
@@ -10,7 +10,7 @@
 
 
     <!-- Navigation DESKTOP -->
-    <nav class="nav">
+   <nav class="nav" :class="{ 'mobile-open': menuOpen }">
       <a href="#">Home</a>
       <a href="#">Rooms</a>
       <a href="#">Restaurants</a>
@@ -21,10 +21,11 @@
 
 
     <!-- Hamburger MOBILE -->
-    <button class="hamburger">
-      <font-awesome-icon :icon="faBars" />
-    </button>
-
+  <button class="hamburger" @click="toggleMenu">
+  <font-awesome-icon 
+    :icon="menuOpen ? faXmark : faBars" 
+  />
+</button>
 
     <!-- RIGHT SIDE -->
     <div class="right-actions">
@@ -90,7 +91,7 @@
 
 /* HAMBURGER ICON */
 .hamburger {
-  color: #0066cc;
+  color: #6ea1d4;
 }
 
 
@@ -192,6 +193,39 @@
 
 @media (max-width: 768px) {
 
+/* toggle menu */
+.nav.mobile-open {
+  display: flex;
+
+  position: absolute;
+
+  top: 80px;
+  right: 15px;
+  left: auto;
+
+  width: 220px;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 18px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+
+.nav.mobile-open a {
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+}
+
   .header {
     padding: 0 15px;
   }
@@ -271,22 +305,20 @@
 }
 
 </style>
+
+
 <script setup>
 import { 
   faPhone, 
   faUser, 
   faBars 
 } from '@fortawesome/free-solid-svg-icons'
+import { ref } from "vue";
+
+const menuOpen = ref(false);
+
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value;
+};
 </script>
 
-I recommend we build the hamburger menu ourselves
-
-Instead of copying a library, we can create it step by step using Vue. You'll learn about:
-
-ref()
-v-if
-@click
-:class
-CSS transitions
-
-By the end, you'll understand how responsive navigation works rather than just having code that works.

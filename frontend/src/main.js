@@ -2,7 +2,6 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-
 // Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
