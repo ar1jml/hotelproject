@@ -191,119 +191,55 @@
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-/* toggle menu */
-.nav.mobile-open {
-  display: flex;
+  .top-header{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
 
-  position: absolute;
+    height:60px;
+    padding:0 16px;
+  }
 
-  top: 80px;
-  right: 15px;
-  left: auto;
+  .account-btn{
+    display:flex;
+    justify-self:start;
+    align-items:center;
+    justify-content:center;
 
-  width: 220px;
+    width:42px;
+    height:42px;
 
-  flex-direction: column;
-  align-items: flex-start;
+    border:none;
+    border-radius:50%;
+    background:#1f4ca3;
+    color:#fff;
+  }
 
-  gap: 12px;
+  .social-links{
+    justify-self:center;
 
-  padding: 18px;
+    display:flex;
+    gap:18px;
+  }
 
-  background: white;
+  .quick-links{
+    display:none;
+  }
 
-  border-radius: 10px;
+  .book-btn{
+    display:block;
+    justify-self:end;
 
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    padding:10px 16px;
+
+    border:none;
+    border-radius:20px;
+    background:#1f4ca3;
+    color:#fff;
+  }
 }
-
-
-.nav.mobile-open a {
-  font-size: 15px;
-  font-weight: 600;
-  width: 100%;
-}
-
-  .header {
-    padding: 0 15px;
-  }
-
-
-  /* Hide desktop menu */
-  .nav {
-    display: none;
-  }
-
-
-  /* Hamburger CENTER */
-  .hamburger {
-    display: block;
-
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background: transparent;
-    border: none;
-
-    font-size: 28px;
-    color: #0066cc;
-
-    cursor: pointer;
-  }
-
-
-  /* Right side */
-  .right-actions {
-    margin-left: auto;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-
-  /* Phone area */
-  .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-
-  .contact-text {
-    display: flex;
-    flex-direction: column;
-    white-space: nowrap;
-  }
-
-
-  .contact-text span {
-    font-size: 13px;
-  }
-
-
-  .contact-text a {
-    font-size: 13px;
-    color: black;
-  }
-
-
-  /* Hide user */
-  .account-link {
-    display: none;
-  }
-
-
-  /* Hide booking */
-  .book-btn {
-    display: none;
-  }
-
-}
-
 </style>
 
 
