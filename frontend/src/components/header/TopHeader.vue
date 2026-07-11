@@ -190,7 +190,10 @@
 }
 
 /* RESPONSIVE */
-
+.account-btn,
+.book-btn{
+    display:none;
+}
 @media (max-width:768px){
 
   .top-header{
