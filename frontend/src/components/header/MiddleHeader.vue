@@ -1,31 +1,19 @@
-<template>
-  <div class="middle-header">
 
-    <!-- Mobile User -->
+<template>
+  <div class="top-header">
+
+    <!-- User (Mobile Only) -->
     <button class="account-btn">
       <i class="fa-regular fa-user"></i>
     </button>
 
-
     <!-- Social Media -->
     <div class="social-links">
-      <a href="#">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-telegram"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-
-      <a href="#">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
-
 
     <!-- Desktop Links -->
     <div class="quick-links">
@@ -34,98 +22,116 @@
       <a href="#">Customer Service</a>
     </div>
 
-
-    <!-- Mobile Book -->
+    <!-- Mobile Button -->
     <button class="book-btn">
-      Book Your Stay
+      Book
     </button>
 
   </div>
 </template>
-
-
 <style scoped>
-@media(max-width:768px){
 
-.middle-header{
+/* Hidden on desktop */
+.account-btn,
+.book-btn {
+  display: none;
+}
+.top-header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  height:60px;
-
-  display:grid;
-
-  grid-template-columns:40px 1fr auto;
-
-  align-items:center;
-
-  padding:0 15px;
-
+  padding: 0 40px;
+  background: #fff;
+  border-top: 1px solid #eee;
 }
 
+/* Social Icons */
 
-/* user left */
-.account-btn{
-
-  display:flex;
-
-  width:40px;
-
-  height:40px;
-
-  border:none;
-
-  border-radius:50%;
-
-  background:#1f4ca3;
-
-  color:white;
-
-  align-items:center;
-
-  justify-content:center;
-
+.social-links {
+  display: flex;
+  gap: 25px;
 }
 
-
-/* social exactly center */
-.social-links{
-
-  justify-self:center;
-
-  display:flex;
-
-  gap:14px;
-
+.social-links a {
+  color: #1f4ca3;
+  font-size: 22px;
+  transition: 0.3s;
 }
 
-
-/* hide desktop links */
-.quick-links{
-
-  display:none;
-
+.social-links a:hover {
+  color: #0d6efd;
 }
 
+/* Right Links */
 
-/* book right */
+.quick-links {
+  display: flex;
+  gap: 40px;
+}
+
+.quick-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.quick-links a:hover {
+  color: #1f4ca3;
+}
+
+.mobile-top-header{
+    display:none;
+}
+
+@media (max-width:768px){
+
+.top-header{
+    height:60px;
+    padding:0 15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.account-btn,
 .book-btn{
-
-  display:block;
-
-  justify-self:end;
-
-  border:none;
-
-  background:#1f4ca3;
-
-  color:white;
-
-  padding:9px 14px;
-
-  border-radius:20px;
-
-  font-size:13px;
-
+    display:block;
 }
 
+.account-btn{
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+    background:#1f4ca3;
+    color:#fff;
+    font-size:18px;
+}
+
+.book-btn{
+    border:none;
+    background:#1f4ca3;
+    color:#fff;
+
+    padding:10px 16px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+/* Center social icons */
+.social-links{
+    display:flex;
+    gap:18px;
+}
+
+/* Hide desktop links */
+.quick-links{
+    display:none;
+}
 }
 </style>

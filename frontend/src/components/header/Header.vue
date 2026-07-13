@@ -1,6 +1,7 @@
 <script setup>
 import TopHeader from './TopHeader.vue'
 import MiddleHeader from './MiddleHeader.vue'
+import HeroBanner from './HeroBanner.vue'
 </script>
 
 
@@ -11,6 +12,8 @@ import MiddleHeader from './MiddleHeader.vue'
     <TopHeader />
 
     <MiddleHeader />
+
+    <HeroBanner />
 
   </header>
 
