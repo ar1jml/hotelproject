@@ -31,6 +31,12 @@
 </template>
 <style scoped>
 
+
+.middle-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
 /* Hidden on desktop */
 .account-btn,
 .book-btn {

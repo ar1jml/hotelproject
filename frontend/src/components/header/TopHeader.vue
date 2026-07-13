@@ -69,12 +69,13 @@
 
 
 <style scoped>
-
+.top-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
 /* HEADER */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
 
   width: 100%;
   height: 100px;
@@ -85,7 +86,6 @@
   padding: 0 35px;
   box-sizing: border-box;
 
-  z-index: 1000;
 }
 
 
@@ -152,7 +152,7 @@
 
 
 .contact-text span {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 
