@@ -1,263 +1,334 @@
-
 <template>
-  <header class="header">
+
+<header class="top-header">
 
 
-    <!-- Logo LEFT -->
-    <div class="logo-container">
-      <img src="@/assets/logo.png" alt="Logo" class="logo" />
-    </div>
-
-
-    <!-- Navigation DESKTOP -->
-   <nav class="nav" :class="{ 'mobile-open': menuOpen }">
-      <a href="#">Home</a>
-      <a href="#">Rooms</a>
-      <a href="#">Restaurants</a>
-      <a href="#">Blogs</a>
-      <a href="#">Our Gallery</a>
-      <a href="#">Contact Us</a>
-    </nav>
-
-
-    <!-- Hamburger MOBILE -->
-  <button class="hamburger" @click="toggleMenu">
-  <font-awesome-icon 
-    :icon="menuOpen ? faXmark : faBars" 
-  />
-</button>
-
-    <!-- RIGHT SIDE -->
-    <div class="right-actions">
-
-
-     <!-- Phone -->
-<div class="contact-info">
-
-  <a href="tel:+251909555556" class="phone-icon">
-    <font-awesome-icon :icon="faPhone" />
-  </a>
-
-  <div class="contact-text">
-    <span>Have Question?</span>
-
-    <a href="tel:+251909555556">
-      +(251) 909-55-5556
-    </a>
+  <!-- LEFT -->
+  <div class="logo-container">
+    <img src="@/assets/logo.png" class="logo" />
   </div>
 
-</div>
+
+  <!-- CENTER NAV -->
+  <nav class="nav" :class="{open: menuOpen}">
+
+    <a href="#">Home</a>
+    <a href="#">Rooms</a>
+    <a href="#">Restaurants</a>
+    <a href="#">Blogs</a>
+    <a href="#">Our Gallery</a>
+    <a href="#">Contact Us</a>
+
+  </nav>
 
 
-      <!-- My Account -->
-      <a href="/login" class="account-link" title="My Account">
-        <font-awesome-icon :icon="faUser" />
+
+  <!-- MOBILE MENU -->
+  <button class="hamburger" @click="toggleMenu">
+
+    <font-awesome-icon
+      :icon="menuOpen ? faXmark : faBars"
+    />
+
+  </button>
+
+
+
+  <!-- RIGHT -->
+  <div class="contact">
+
+
+    <div class="contact-text">
+
+      <span>
+        Have Question?
+      </span>
+
+      <a href="tel:+251909555556">
+        +(251) 909-55-5556
       </a>
-
-
-      <!-- Book Your Stay -->
-      <button class="book-btn">
-        Book Your Stay
-      </button>
-
 
     </div>
 
 
-  </header>
+
+    <button class="book-btn">
+      Book Your Stay
+    </button>
+
+
+  </div>
+
+
+
+</header>
+
 </template>
 
-
 <style scoped>
-.top-header {
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
-/* HEADER */
-.header {
+.top-header{
 
-  width: 100%;
-  height: 100px;
+height:100px;
 
-  display: flex;
-  align-items: center;
+display:flex;
 
-  padding: 0 35px;
-  box-sizing: border-box;
+align-items:center;
 
-}
+padding:0 35px;
 
+background:white;
 
-/* HAMBURGER ICON */
-.hamburger {
-  color: #6ea1d4;
+position:relative;
+
 }
 
 
 /* LOGO */
-.logo-container {
-  flex-shrink: 0;
-}
 
-.logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+.logo{
 
+width:60px;
+height:60px;
 
-/* NAVIGATION */
-.nav {
-  display: flex;
-  gap: 12px;
+border-radius:50%;
 
-  position: absolute;
-  left: 35%;
-  transform: translateX(-50%);
+object-fit:cover;
+
 }
 
 
-.nav a {
-  text-decoration: none;
-  color: rgb(31, 28, 28);
-  font-weight: 300;
+/* NAV */
+
+.nav{
+
+display:flex;
+
+gap:20px;
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
 }
 
 
-/* RIGHT SIDE */
-.right-actions {
-  margin-left: auto;
+.nav a{
 
-  display: flex;
-  align-items: center;
-  gap: 20px;
+text-decoration:none;
+
+color:#222;
+
+font-weight:500;
+
+white-space:nowrap;
+
 }
 
 
-/* CONTACT */
-.contact-info,
-.contact-text {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+/* RIGHT */
+
+.contact{
+
+margin-left:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
 }
 
 
-.contact-text {
-  display: flex;
-  flex-direction: column;
+.contact-text{
+
+display:flex;
+
+flex-direction:column;
+
 }
 
 
-.contact-text span {
-  font-size: 15px;
+.contact-text span{
+
+font-size:14px;
+
 }
 
 
-.contact-text a {
-  text-decoration: none;
-  color: black;
+.contact-text a{
+
+text-decoration:none;
+
+color:black;
+
 }
 
 
-.account-link {
-  color: black;
-  font-size: 22px;
-}
-
-
-.book-btn {
-  padding: 10px 18px;
-}
-
-
-/* HAMBURGER */
-.menu-btn {
-  display: none;
-
-  background: rgb(113, 113, 216);
-  border: none;
-
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Desktop */
-.hamburger {
-  display: none;
-}
-
-/* RESPONSIVE */
-.account-btn,
 .book-btn{
-    display:none;
+
+background:#1f4ca3;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:25px;
+
 }
-@media (max-width:768px){
 
-  .top-header{
-    display:grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items:center;
 
-    height:60px;
-    padding:0 16px;
-  }
+.hamburger{
 
-  .account-btn{
-    display:flex;
-    justify-self:start;
-    align-items:center;
-    justify-content:center;
+display:none;
 
-    width:42px;
-    height:42px;
+}
 
-    border:none;
-    border-radius:50%;
-    background:#1f4ca3;
-    color:#fff;
-  }
 
-  .social-links{
-    justify-self:center;
 
-    display:flex;
-    gap:18px;
-  }
+/* MOBILE */
 
-  .quick-links{
-    display:none;
-  }
+@media(max-width:768px){
 
-  .book-btn{
-    display:block;
-    justify-self:end;
 
-    padding:10px 16px;
+.top-header{
 
-    border:none;
-    border-radius:20px;
-    background:#1f4ca3;
-    color:#fff;
-  }
+height:80px;
+
+display:grid;
+
+grid-template-columns:1fr auto 1fr;
+
+padding:0 15px;
+
+}
+
+
+/* logo left */
+
+.logo-container{
+
+justify-self:start;
+
+}
+
+
+/* hamburger center */
+
+.hamburger{
+
+display:block;
+
+justify-self:center;
+
+border:none;
+
+background:none;
+
+font-size:28px;
+
+color:#1f4ca3;
+
+}
+
+
+/* contact right */
+
+.contact{
+
+justify-self:end;
+
+margin:0;
+
+}
+
+
+.contact-text span{
+
+font-size:11px;
+
+}
+
+
+.contact-text a{
+
+font-size:11px;
+
+}
+
+
+
+/* hide book */
+
+.book-btn{
+
+display:none;
+
+}
+
+
+/* mobile menu */
+
+.nav{
+
+display:none;
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+flex-direction:column;
+
+padding:20px;
+
+transform:none;
+
+}
+
+
+.nav.open{
+
+display:flex;
+
+}
+
+
 }
 </style>
 
 
+
+
+
+
+
 <script setup>
-import { 
-  faPhone, 
-  faUser, 
-  faBars 
-} from '@fortawesome/free-solid-svg-icons'
-import { ref } from "vue";
+
+import {ref} from "vue";
+
+import {
+faBars,
+faXmark
+} from "@fortawesome/free-solid-svg-icons";
+
 
 const menuOpen = ref(false);
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value;
-};
-</script>
 
+const toggleMenu=()=>{
+
+menuOpen.value=!menuOpen.value;
+
+};
+
+</script>

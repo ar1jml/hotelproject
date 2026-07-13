@@ -1,19 +1,31 @@
-
 <template>
-  <div class="top-header">
+  <div class="middle-header">
 
-    <!-- User (Mobile Only) -->
+    <!-- Mobile User -->
     <button class="account-btn">
       <i class="fa-regular fa-user"></i>
     </button>
 
+
     <!-- Social Media -->
     <div class="social-links">
-      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#"><i class="fa-brands fa-telegram"></i></a>
-      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+      <a href="#">
+        <i class="fa-brands fa-telegram"></i>
+      </a>
+
+      <a href="#">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+      <a href="#">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
     </div>
+
 
     <!-- Desktop Links -->
     <div class="quick-links">
@@ -22,129 +34,97 @@
       <a href="#">Customer Service</a>
     </div>
 
-    <!-- Mobile Button -->
+
+    <!-- Mobile Book -->
     <button class="book-btn">
-      Book
+      Book Your Stay
     </button>
 
   </div>
 </template>
+
+
 <style scoped>
-.top-header {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  background: #fff;
-  border-top: 1px solid #eee;
+@media(max-width:768px){
+
+.middle-header{
+
+  height:60px;
+
+  display:grid;
+
+  grid-template-columns:40px 1fr auto;
+
+  align-items:center;
+
+  padding:0 15px;
+
 }
 
 
-/* Hidden on desktop */
-.account-btn,
-.book-btn {
-  display: none;
-}
-
-
-/* Social Icons */
-.social-links {
-  display: flex;
-  gap: 25px;
-}
-
-.social-links a {
-  color: #1f4ca3;
-  font-size: 22px;
-}
-
-
-/* Desktop Links */
-.quick-links {
-  display: flex;
-  gap: 40px;
-}
-
-.quick-links a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-
-
-@media (max-width:768px){
-
-.top-header{
-    height:60px;
-    padding:0 15px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-
-/* Show mobile buttons */
-.account-btn,
-.book-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-
-/* User left */
+/* user left */
 .account-btn{
-    width:40px;
-    height:40px;
 
-    border:none;
-    border-radius:50%;
+  display:flex;
 
-    background:#1f4ca3;
-    color:white;
+  width:40px;
 
-    font-size:18px;
+  height:40px;
 
-    order:1;
+  border:none;
+
+  border-radius:50%;
+
+  background:#1f4ca3;
+
+  color:white;
+
+  align-items:center;
+
+  justify-content:center;
+
 }
 
 
-/* Social center */
+/* social exactly center */
 .social-links{
-    display:flex;
-    gap:15px;
 
-    order:2;
+  justify-self:center;
+
+  display:flex;
+
+  gap:14px;
+
 }
 
-.social-links a{
-    font-size:18px;
+
+/* hide desktop links */
+.quick-links{
+
+  display:none;
+
 }
 
 
-/* Book right */
+/* book right */
 .book-btn{
 
-    order:3;
+  display:block;
 
-    border:none;
-    background:#1f4ca3;
-    color:white;
+  justify-self:end;
 
-    padding:8px 18px;
+  border:none;
 
-    border-radius:20px;
+  background:#1f4ca3;
 
-    font-weight:600;
-}
+  color:white;
 
+  padding:9px 14px;
 
-/* Hide desktop */
-.quick-links{
-    display:none;
+  border-radius:20px;
+
+  font-size:13px;
+
 }
 
 }
