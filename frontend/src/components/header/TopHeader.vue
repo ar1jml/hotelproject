@@ -3,13 +3,13 @@
 <header class="top-header">
 
 
-  <!-- LEFT -->
+  <!-- left -->
   <div class="logo-container">
     <img src="@/assets/logo.png" class="logo" />
   </div>
 
 
-  <!-- CENTER NAV -->
+  <!-- center nav -->
   <nav class="nav" :class="{open: menuOpen}">
 
     <a href="#">Home</a>
@@ -34,7 +34,7 @@
 
 
 
-  <!-- RIGHT -->
+  <!-- right -->
   <div class="contact">
 
 
@@ -45,7 +45,7 @@
       </span>
 
       <a href="tel:+251909555556">
-        +(251) 909-55-5556
+        +(251) 966-90-1919
       </a>
 
     </div>
@@ -74,9 +74,9 @@ display:flex;
 
 align-items:center;
 
-padding:0 35px;
+padding:0 15px;
 
-background:white;
+background:rgb(215, 207, 207);
 
 position:relative;
 
@@ -87,8 +87,8 @@ position:relative;
 
 .logo{
 
-width:60px;
-height:60px;
+width:50px;
+height:50px;
 
 border-radius:50%;
 
@@ -103,11 +103,11 @@ object-fit:cover;
 
 display:flex;
 
-gap:20px;
+gap:15px;
 
 position:absolute;
 
-left:50%;
+left:40%;
 
 transform:translateX(-50%);
 
@@ -229,7 +229,7 @@ border:none;
 
 background:none;
 
-font-size:28px;
+font-size:30px;
 
 color:#1f4ca3;
 
@@ -281,7 +281,7 @@ position:absolute;
 
 top:80px;
 
-left:0;
+left:25;
 
 width:100%;
 

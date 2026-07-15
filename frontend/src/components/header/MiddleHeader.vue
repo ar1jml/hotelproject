@@ -24,7 +24,7 @@
 
     <!-- Mobile Button -->
     <button class="book-btn">
-      Book
+      Book Now
     </button>
 
   </div>
@@ -37,13 +37,13 @@
   display: none;
 }
 .top-header {
-  height: 50px;
+  height: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 0 40px;
-  background: #fff;
+  background: #c2b6b6;
   border-top: 1px solid #eee;
 }
 
@@ -51,7 +51,7 @@
 
 .social-links {
   display: flex;
-  gap: 25px;
+  gap: 15px;
 }
 
 .social-links a {
@@ -68,13 +68,13 @@
 
 .quick-links {
   display: flex;
-  gap: 40px;
+  gap: 25px;
 }
 
 .quick-links a {
   text-decoration: none;
   color: #000;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
 }
 
