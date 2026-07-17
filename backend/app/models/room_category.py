@@ -4,8 +4,7 @@ from sqlalchemy import Numeric, String, Text
 from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.core.database import Base
-
+from app.models.base import Base
 
 class RoomCategory(Base):
     __tablename__ = "room_categories"
@@ -32,7 +31,4 @@ class RoomCategory(Base):
         ARRAY(String)
     )
 
-    bookings = relationship(
-        "Booking",
-        back_populates="room_category",
-    )
+    

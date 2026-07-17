@@ -57,7 +57,7 @@ onMounted(() => {
             {{ room.name }}
         </h3>
 
-
+<h3>Arafat J.</h3>
         <p>
             {{ room.description }}
         </p>
