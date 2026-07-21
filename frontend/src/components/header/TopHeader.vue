@@ -13,7 +13,10 @@
   <nav class="nav" :class="{open: menuOpen}">
 
     <a href="#">Home</a>
-    <a href="#">Rooms</a>
+    <router-link to="/rooms">
+ Rooms
+</router-link>
+
     <a href="#">Restaurants</a>
     <a href="#">Blogs</a>
     <a href="#">Our Gallery</a>

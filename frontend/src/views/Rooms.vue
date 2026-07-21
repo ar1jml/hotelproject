@@ -1,9 +1,7 @@
 <template>
 
-<div class="room-card">
-
-    Deluxe Room
-
-</div>
+<h1>
+  Rooms Page
+</h1>
 
 </template>
