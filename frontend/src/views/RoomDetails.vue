@@ -4,7 +4,7 @@
 
     <h1>Deluxe Room</h1>
 
-    <RoomBookingForm />
+  <BookingSearch />
 
 </div>
 
@@ -12,6 +12,6 @@
 
 <script setup>
 
-import RoomBookingForm from "@/components/Rooms/RoomBookingForm.vue"
+import BookingSearch from "@/components/Rooms/BookingSearch.vue"
 
 </script>

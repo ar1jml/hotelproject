@@ -1,18 +1,39 @@
 <script setup>
+import { ref, onMounted } from "vue"
+import axios from "axios"
 
-import RoomHero from "./RoomHero.vue"
-import RoomSection from "./RoomSection.vue"
+import RoomCard from "./RoomCard.vue"
+
+
+const rooms = ref([])
+
+
+onMounted(async () => {
+
+    const response = await axios.get(
+        "http://127.0.0.1:8000/room-categories"
+    )
+
+    rooms.value = response.data
+
+})
 
 </script>
 
 
 <template>
 
+<section>
 
-<RoomHero />
+    <h1>Our Rooms</h1>
 
 
-<RoomSection />
+    <RoomCard
+        v-for="room in rooms"
+        :key="room.id"
+        :room="room"
+    />
 
+</section>
 
 </template>
