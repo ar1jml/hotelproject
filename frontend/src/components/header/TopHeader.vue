@@ -281,9 +281,13 @@ position:absolute;
 
 top:80px;
 
-left:25;
+left:0;
+
+right:0;
 
 width:100%;
+
+box-sizing:border-box;
 
 background:white;
 
@@ -292,6 +296,12 @@ flex-direction:column;
 padding:20px;
 
 transform:none;
+
+z-index:999;
+
+max-height:calc(100vh - 80px);
+
+overflow:auto;
 
 }
 
@@ -302,6 +312,23 @@ display:flex;
 
 }
 
+/* make links full-width & wrap on small screens */
+
+.nav a{
+
+display:block;
+
+padding:10px 0;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:500;
+
+white-space:normal;
+
+}
 
 }
 </style>

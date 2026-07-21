@@ -21,11 +21,15 @@ onMounted(async () => {
   }
 
 })
+import Header from './components/header/Header.vue'
+import Rooms from './components/Rooms/RoomCategories.vue'
 </script>
 
 
 <template>
-
+ <Rooms />
+  <Header />
+     <RouterView />
   <div>
 
     <h1>Room Categories</h1>
