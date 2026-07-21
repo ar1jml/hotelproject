@@ -1,11 +1,18 @@
-<template>
-  <div>
-    <h1>Rooms Page</h1>
-
-    <RoomCard />
-  </div>
-</template>
-
 <script setup>
-import RoomCard from './RoomCard.vue'
+
+import RoomHero from "./RoomHero.vue"
+import RoomSection from "./RoomSection.vue"
+
 </script>
+
+
+<template>
+
+
+<RoomHero />
+
+
+<RoomSection />
+
+
+</template>
