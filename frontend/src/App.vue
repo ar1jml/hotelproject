@@ -1,11 +1,14 @@
 <script setup>
 import Header from './components/header/Header.vue'
+import HeroBanner from './components/hero/HeroBanner.vue'
 </script>
 
 <template>
-
   <Header />
 
-  <router-view />
+  <HeroBanner />
 
+  <main>
+    <router-view />
+  </main>
 </template>

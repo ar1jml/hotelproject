@@ -26,6 +26,7 @@ onMounted(async () => {
 <section>
 
     <h1>Our Rooms</h1>
+    <h2>Explore our luxurious rooms and suites</h2>
 
 
     <RoomCard

@@ -1,6 +1,7 @@
 <script setup>
 import TopHeader from './TopHeader.vue'
 import MiddleHeader from './MiddleHeader.vue'
+
 </script>
 
 
@@ -11,7 +12,7 @@ import MiddleHeader from './MiddleHeader.vue'
     <TopHeader />
 
     <MiddleHeader />
-
+   
   </header>
 
 </template>
