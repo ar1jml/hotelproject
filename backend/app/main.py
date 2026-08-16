@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.room import router as room_router
 
-app = FastAPI(title="Hotel API")
+app = FastAPI(title="Hotel Website API")
 
 app.include_router(room_router)
 
