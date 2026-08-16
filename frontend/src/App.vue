@@ -4,11 +4,16 @@ import HeroBanner from './components/hero/HeroBanner.vue'
 </script>
 
 <template>
-  <Header />
 
-  <HeroBanner />
+  <!-- Public Website -->
+  <template v-if="!$route.path.startsWith('/admin')">
+    <Header />
+    <HeroBanner />
+  </template>
 
+  <!-- Page Content -->
   <main>
     <router-view />
   </main>
+
 </template>
