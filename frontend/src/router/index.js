@@ -12,6 +12,10 @@ import AdminRooms from '@/views/admin/Rooms.vue'
 import Register from '@/views/auth/Register.vue'
 import AdminLogin from '@/views/auth/AdminLogin.vue'
 
+import StaffLogin from '@/views/auth/StaffLogin.vue'
+import StaffDashboard from '@/views/staff/Dashboard.vue'
+
+
 
 
 const routes = [
@@ -72,6 +76,17 @@ const routes = [
   path: '/admin/login',
   name: 'AdminLogin',
   component: AdminLogin
+},
+{
+  path: '/staff/login',
+  name: 'StaffLogin',
+  component: StaffLogin
+},
+
+{
+  path: '/staff/dashboard',
+  name: 'StaffDashboard',
+  component: StaffDashboard
 },
 ]
 
