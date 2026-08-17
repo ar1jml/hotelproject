@@ -8,6 +8,8 @@ import Dashboard from "@/views/admin/Dashboard.vue"
 import Bookings from '@/views/admin/Bookings.vue'
 import Guests from '../views/admin/Guests.vue'
 import Payments from '../views/admin/Payments.vue'
+import AdminRooms from '@/views/admin/Rooms.vue'
+
 const routes = [
     {
         path: "/rooms",
@@ -33,21 +35,30 @@ const routes = [
             }
         ]
     },
+
     {
-  path: '/admin/bookings',
-  name: 'Bookings',
-  component: Bookings
-},
-{
-  path: '/admin/guests',
-  name: 'AdminGuests',
-  component: Guests
-},
-{
-  path: '/admin/payments',
-  name: 'AdminPayments',
-  component: Payments
-}
+        path: '/admin/bookings',
+        name: 'Bookings',
+        component: Bookings
+    },
+
+    {
+        path: '/admin/guests',
+        name: 'AdminGuests',
+        component: Guests
+    },
+
+    {
+        path: '/admin/payments',
+        name: 'AdminPayments',
+        component: Payments
+    },
+
+    {
+        path: '/admin/rooms',
+        name: 'AdminRooms',
+        component: AdminRooms
+    }
 ]
 
 const router = createRouter({
