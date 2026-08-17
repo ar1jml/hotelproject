@@ -7,6 +7,7 @@ import AdminLayout from "@/layouts/AdminLayout.vue"
 import Dashboard from "@/views/admin/Dashboard.vue"
 import Bookings from '@/views/admin/Bookings.vue'
 import Guests from '../views/admin/Guests.vue'
+import Payments from '../views/admin/Payments.vue'
 const routes = [
     {
         path: "/rooms",
@@ -41,6 +42,11 @@ const routes = [
   path: '/admin/guests',
   name: 'AdminGuests',
   component: Guests
+},
+{
+  path: '/admin/payments',
+  name: 'AdminPayments',
+  component: Payments
 }
 ]
 
