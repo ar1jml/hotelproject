@@ -9,6 +9,10 @@ import Bookings from '@/views/admin/Bookings.vue'
 import Guests from '../views/admin/Guests.vue'
 import Payments from '../views/admin/Payments.vue'
 import AdminRooms from '@/views/admin/Rooms.vue'
+import Register from '@/views/auth/Register.vue'
+import AdminLogin from '@/views/auth/AdminLogin.vue'
+
+
 
 const routes = [
     {
@@ -58,7 +62,17 @@ const routes = [
         path: '/admin/rooms',
         name: 'AdminRooms',
         component: AdminRooms
-    }
+    },
+    {
+  path: '/register',
+  name: 'Register',
+  component: Register
+},
+{
+  path: '/admin/login',
+  name: 'AdminLogin',
+  component: AdminLogin
+},
 ]
 
 const router = createRouter({
