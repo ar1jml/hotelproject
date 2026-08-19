@@ -1,8 +1,15 @@
+<script setup>
+import BookingSearch from "../Rooms/BookingSearch.vue"
+</script>
+
+
 <template>
+
   <section id="home" class="hero">
 
     <!-- Background overlay -->
     <div class="overlay"></div>
+
 
     <!-- Hero content -->
     <div class="hero-content">
@@ -21,13 +28,20 @@
         and unforgettable experiences come together.
       </p>
 
+
       <div class="hero-buttons">
 
-        <a href="#rooms" class="primary-btn">
+        <a
+          href="#rooms"
+          class="primary-btn"
+        >
           Book Your Stay
         </a>
 
-        <a href="#rooms" class="secondary-btn">
+        <a
+          href="#rooms"
+          class="secondary-btn"
+        >
           Explore Rooms
         </a>
 
@@ -35,12 +49,26 @@
 
     </div>
 
+
+    <!-- BOOKING SEARCH -->
+    <div class="booking-container">
+
+      <BookingSearch />
+
+    </div>
+
+
     <!-- Scroll indicator -->
-    <a href="#rooms" class="scroll-indicator" aria-label="Scroll to rooms">
+    <a
+      href="#rooms"
+      class="scroll-indicator"
+      aria-label="Scroll to rooms"
+    >
       <span></span>
     </a>
 
   </section>
+
 </template>
 
 
@@ -54,19 +82,28 @@
   position: relative;
 
   width: 100%;
-  min-height: 680px;
-  height: calc(100vh - 145px);
+
+  min-height: 760px;
+
+  height: calc(100vh - 125px);
+
+  box-sizing: border-box;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background-image: url('@/assets/hotel.jpg');
+
   background-size: cover;
+
   background-position: center center;
+
   background-repeat: no-repeat;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 
@@ -76,13 +113,14 @@
 
 .overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.50)
+      rgba(0, 0, 0, 0.32),
+      rgba(0, 0, 0, 0.55)
     );
 
   z-index: 1;
@@ -90,11 +128,12 @@
 
 
 /* ========================================
-   CONTENT
+   HERO CONTENT
 ======================================== */
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 
   width: min(900px, 90%);
@@ -103,16 +142,19 @@
 
   color: white;
 
-  margin-top: -20px;
+  margin-top: -100px;
 }
 
 
-/* Small heading */
+/* ========================================
+   EYEBROW
+======================================== */
 
 .eyebrow {
   margin: 0 0 18px;
 
-  font-size: 16px;
+  font-size: 15px;
+
   font-weight: 600;
 
   letter-spacing: 4px;
@@ -121,12 +163,14 @@
 }
 
 
-/* Main heading */
+/* ========================================
+   TITLE
+======================================== */
 
 .hero-content h1 {
   margin: 0;
 
-  font-size: clamp(42px, 6vw, 76px);
+  font-size: clamp(44px, 6vw, 76px);
 
   line-height: 1.08;
 
@@ -139,32 +183,35 @@
 }
 
 
-/* Description */
+/* ========================================
+   DESCRIPTION
+======================================== */
 
 .hero-description {
   max-width: 680px;
 
-  margin: 25px auto 35px;
+  margin: 25px auto 30px;
 
-  font-size: clamp(17px, 2vw, 21px);
+  font-size: clamp(16px, 2vw, 20px);
 
-  line-height: 1.7;
+  line-height: 1.6;
 
   color: rgba(255, 255, 255, 0.95);
 }
 
 
 /* ========================================
-   BUTTONS
+   HERO BUTTONS
 ======================================== */
 
 .hero-buttons {
   display: flex;
 
   justify-content: center;
+
   align-items: center;
 
-  gap: 16px;
+  gap: 15px;
 }
 
 
@@ -173,15 +220,17 @@
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  min-width: 170px;
+  min-width: 165px;
 
-  padding: 15px 28px;
+  padding: 14px 25px;
 
   border-radius: 3px;
 
-  font-size: 16px;
+  font-size: 15px;
+
   font-weight: 600;
 
   text-decoration: none;
@@ -232,6 +281,25 @@
 
 
 /* ========================================
+   BOOKING CONTAINER
+======================================== */
+
+.booking-container {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+
+  bottom: -55px;
+
+  transform: translateX(-50%);
+
+  width: min(1180px, calc(100% - 50px));
+}
+
+
+/* ========================================
    SCROLL INDICATOR
 ======================================== */
 
@@ -241,9 +309,11 @@
   z-index: 3;
 
   bottom: 25px;
+
   left: 50%;
 
   width: 28px;
+
   height: 45px;
 
   transform: translateX(-50%);
@@ -258,9 +328,11 @@
   position: absolute;
 
   top: 8px;
+
   left: 50%;
 
   width: 5px;
+
   height: 9px;
 
   background: white;
@@ -277,6 +349,7 @@
 
   0% {
     opacity: 0;
+
     transform: translate(-50%, 0);
   }
 
@@ -290,6 +363,7 @@
 
   100% {
     opacity: 0;
+
     transform: translate(-50%, 15px);
   }
 
@@ -300,20 +374,20 @@
    TABLET
 ======================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   .hero {
-    min-height: 600px;
-
-    height: calc(100vh - 120px);
+    min-height: 720px;
   }
 
   .hero-content {
-    width: 90%;
+    margin-top: -100px;
   }
 
-  .hero-content h1 {
-    font-size: clamp(40px, 7vw, 60px);
+  .booking-container {
+    width: calc(100% - 30px);
+
+    bottom: -90px;
   }
 
 }
@@ -326,27 +400,28 @@
 @media (max-width: 768px) {
 
   .hero {
-    min-height: 600px;
+    min-height: 720px;
 
-    height: calc(100vh - 80px);
+    height: auto;
 
-    background-position: center;
+    padding:
+      100px
+      0
+      150px;
   }
 
 
   .hero-content {
     width: 90%;
 
-    margin-top: -10px;
+    margin-top: -80px;
   }
 
 
   .eyebrow {
-    font-size: 12px;
+    font-size: 11px;
 
     letter-spacing: 2.5px;
-
-    margin-bottom: 15px;
   }
 
 
@@ -360,8 +435,6 @@
   .hero-description {
     font-size: 16px;
 
-    line-height: 1.6;
-
     margin: 20px auto 28px;
   }
 
@@ -369,7 +442,7 @@
   .hero-buttons {
     flex-direction: column;
 
-    gap: 12px;
+    gap: 10px;
   }
 
 
@@ -383,8 +456,15 @@
   }
 
 
+  .booking-container {
+    width: calc(100% - 30px);
+
+    bottom: -120px;
+  }
+
+
   .scroll-indicator {
-    bottom: 18px;
+    display: none;
   }
 
 }
@@ -397,7 +477,7 @@
 @media (max-width: 450px) {
 
   .hero {
-    min-height: 560px;
+    min-height: 700px;
   }
 
 
@@ -408,11 +488,6 @@
 
   .hero-description {
     font-size: 15px;
-  }
-
-
-  .eyebrow {
-    font-size: 11px;
   }
 
 }

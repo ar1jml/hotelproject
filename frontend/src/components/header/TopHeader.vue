@@ -26,17 +26,54 @@ const toggleMenu = () => {
     </div>
 
 
-    <!-- DESKTOP NAVIGATION -->
+    <!-- NAVIGATION -->
     <nav
       class="nav"
       :class="{ open: menuOpen }"
     >
-      <a href="#home">Home</a>
-      <a href="#rooms">Rooms</a>
-      <a href="#">Restaurants</a>
-      <a href="#">Blogs</a>
-      <a href="#">Our Gallery</a>
-      <a href="#">Contact Us</a>
+
+      <a
+        href="/#home"
+        @click="menuOpen = false"
+      >
+        Home
+      </a>
+
+      <a
+        href="/#rooms"
+        @click="menuOpen = false"
+      >
+        Rooms
+      </a>
+
+      <a
+        href="/#restaurant"
+        @click="menuOpen = false"
+      >
+        Restaurants
+      </a>
+
+      <a
+        href="/#blogs"
+        @click="menuOpen = false"
+      >
+        Blogs
+      </a>
+
+      <a
+        href="/#gallery"
+        @click="menuOpen = false"
+      >
+        Our Gallery
+      </a>
+
+      <a
+        href="/#contact"
+        @click="menuOpen = false"
+      >
+        Contact Us
+      </a>
+
     </nav>
 
 
@@ -56,12 +93,17 @@ const toggleMenu = () => {
     <div class="contact">
 
       <div class="contact-text">
-        <span>Have Question?</span>
+
+        <span>
+          Have Question?
+        </span>
 
         <a href="tel:+251909555556">
           +(251) 966-90-1919
         </a>
+
       </div>
+
 
       <button class="book-btn">
         Book Your Stay
@@ -87,12 +129,10 @@ const toggleMenu = () => {
 
   display: grid;
 
-  /*
-    Fixed logo area
-    Flexible navigation area
-    Fixed contact area
-  */
-  grid-template-columns: 90px minmax(0, 1fr) auto;
+  grid-template-columns:
+    90px
+    minmax(0, 1fr)
+    auto;
 
   align-items: center;
 
@@ -267,13 +307,16 @@ const toggleMenu = () => {
 
 
 /* ========================================
-   LARGE TABLET / SMALL DESKTOP
+   LARGE TABLET
 ======================================== */
 
 @media (max-width: 1250px) {
 
   .top-header {
-    grid-template-columns: 75px minmax(0, 1fr) auto;
+    grid-template-columns:
+      75px
+      minmax(0, 1fr)
+      auto;
 
     padding: 0 15px;
   }
@@ -320,7 +363,10 @@ const toggleMenu = () => {
 @media (max-width: 1000px) {
 
   .top-header {
-    grid-template-columns: 70px minmax(0, 1fr) auto;
+    grid-template-columns:
+      70px
+      minmax(0, 1fr)
+      auto;
   }
 
   .nav {
@@ -352,7 +398,10 @@ const toggleMenu = () => {
   .top-header {
     min-height: 80px;
 
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns:
+      1fr
+      auto
+      1fr;
 
     padding: 0 15px;
   }
@@ -402,7 +451,7 @@ const toggleMenu = () => {
   }
 
 
-  /* HIDE DESKTOP BUTTON */
+  /* HIDE BOOK BUTTON */
 
   .book-btn {
     display: none;
@@ -491,6 +540,7 @@ const toggleMenu = () => {
   .hamburger {
     font-size: 25px;
   }
+
 }
 
 </style>

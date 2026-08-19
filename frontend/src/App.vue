@@ -1,46 +1,55 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-
 import Header from './components/header/Header.vue'
 import HeroBanner from './components/hero/HeroBanner.vue'
+import WelcomeSection from './components/home/WelcomeSection.vue'
 import Rooms from './components/Rooms/Rooms.vue'
-
-const route = useRoute()
-
-const isPublicPage = computed(() => {
-  return !route.path.startsWith('/admin') &&
-         !route.path.startsWith('/staff')
-})
+import Restaurant from './components/restaurant/Restaurant.vue'
 </script>
 
 <template>
+  <Header />
 
-  <!-- PUBLIC WEBSITE -->
+  <main>
 
-  <template v-if="isPublicPage">
+    <!-- HOME -->
+    <section id="home">
+      <HeroBanner />
+      <WelcomeSection />
+    </section>
 
-    <Header />
+    <!-- ROOMS -->
+    <Rooms />
 
-    <HeroBanner />
+    <!-- RESTAURANT -->
+    <Restaurant />
 
-    <main>
-      <Rooms />
+    <!-- BLOGS -->
+    <section id="blogs" class="page-section">
+      <h2>Our Blogs</h2>
+    </section>
 
-      <router-view />
-    </main>
+    <!-- GALLERY -->
+    <section id="gallery" class="page-section">
+      <h2>Our Gallery</h2>
+    </section>
 
-  </template>
+    <!-- CONTACT -->
+    <section id="contact" class="page-section">
+      <h2>Contact Us</h2>
+    </section>
 
-
-  <!-- ADMIN / STAFF -->
-
-  <template v-else>
-
-    <main>
-      <router-view />
-    </main>
-
-  </template>
-
+  </main>
 </template>
+
+<style scoped>
+#home {
+  scroll-margin-top: 140px;
+}
+
+.page-section {
+  min-height: 500px;
+  padding: 100px 30px;
+  text-align: center;
+  scroll-margin-top: 140px;
+}
+</style>
