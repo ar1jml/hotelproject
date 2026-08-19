@@ -4,6 +4,7 @@ import { useRoute } from 'vue-router'
 
 import Header from './components/header/Header.vue'
 import HeroBanner from './components/hero/HeroBanner.vue'
+import Rooms from './components/Rooms/Rooms.vue'
 
 const route = useRoute()
 
@@ -14,11 +15,32 @@ const isPublicPage = computed(() => {
 </script>
 
 <template>
-  <Header v-if="isPublicPage" />
 
-  <HeroBanner v-if="isPublicPage" />
+  <!-- PUBLIC WEBSITE -->
 
-  <main>
-    <router-view />
-  </main>
+  <template v-if="isPublicPage">
+
+    <Header />
+
+    <HeroBanner />
+
+    <main>
+      <Rooms />
+
+      <router-view />
+    </main>
+
+  </template>
+
+
+  <!-- ADMIN / STAFF -->
+
+  <template v-else>
+
+    <main>
+      <router-view />
+    </main>
+
+  </template>
+
 </template>
