@@ -1,10 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router"
 
-// Public
+// =========================
+// PUBLIC
+// =========================
 import Rooms from "@/components/Rooms/Rooms.vue"
+import BookNow from "@/components/Rooms/BookNow.vue"
 import RoomDetails from "@/views/RoomDetails.vue"
+import MyAccount from "@/views/MyAccount.vue"
 
-// Admin
+// =========================
+// AUTH
+// =========================
+import Register from "@/views/auth/Register.vue"
+import AdminLogin from "@/views/auth/AdminLogin.vue"
+import StaffLogin from "@/views/auth/StaffLogin.vue"
+
+// =========================
+// ADMIN
+// =========================
 import AdminLayout from "@/layouts/AdminLayout.vue"
 import Dashboard from "@/views/admin/Dashboard.vue"
 import Bookings from "@/views/admin/Bookings.vue"
@@ -12,12 +25,9 @@ import Guests from "@/views/admin/Guests.vue"
 import Payments from "@/views/admin/Payments.vue"
 import AdminRooms from "@/views/admin/Rooms.vue"
 
-// Auth
-import Register from "@/views/auth/Register.vue"
-import AdminLogin from "@/views/auth/AdminLogin.vue"
-import StaffLogin from "@/views/auth/StaffLogin.vue"
-
-// Staff
+// =========================
+// STAFF
+// =========================
 import StaffLayout from "@/layouts/StaffLayout.vue"
 import StaffDashboard from "@/views/staff/Dashboard.vue"
 import CheckIns from "@/views/staff/CheckIns.vue"
@@ -26,22 +36,44 @@ import StaffGuests from "@/views/staff/Guests.vue"
 import StaffRooms from "@/views/staff/Rooms.vue"
 import StaffPayments from "@/views/staff/Payments.vue"
 import StaffBookings from "@/views/staff/Bookings.vue"
+
+
 const routes = [
+
+  // =========================
+  // HOME
+  // =========================
+  {
+    path: "/",
+    redirect: "/rooms"
+  },
+
 
   // =========================
   // PUBLIC WEBSITE
   // =========================
-
   {
     path: "/rooms",
-    name: "rooms",
+    name: "Rooms",
     component: Rooms
   },
 
   {
     path: "/rooms/:id",
-    name: "room-details",
+    name: "RoomDetails",
     component: RoomDetails
+  },
+
+  {
+    path: "/book-now",
+    name: "BookNow",
+    component: BookNow
+  },
+
+  {
+    path: "/my-account",
+    name: "MyAccount",
+    component: MyAccount
   },
 
   {
@@ -52,9 +84,8 @@ const routes = [
 
 
   // =========================
-  // ADMIN AUTH
+  // ADMIN LOGIN
   // =========================
-
   {
     path: "/admin/login",
     name: "AdminLogin",
@@ -65,12 +96,16 @@ const routes = [
   // =========================
   // ADMIN PANEL
   // =========================
-
   {
     path: "/admin",
     component: AdminLayout,
 
     children: [
+
+      {
+        path: "",
+        redirect: "/admin/dashboard"
+      },
 
       {
         path: "dashboard",
@@ -80,7 +115,7 @@ const routes = [
 
       {
         path: "bookings",
-        name: "Bookings",
+        name: "AdminBookings",
         component: Bookings
       },
 
@@ -107,9 +142,8 @@ const routes = [
 
 
   // =========================
-  // STAFF AUTH
+  // STAFF LOGIN
   // =========================
-
   {
     path: "/staff/login",
     name: "StaffLogin",
@@ -118,14 +152,18 @@ const routes = [
 
 
   // =========================
-  // STAFF / RECEPTION PANEL
+  // STAFF PANEL
   // =========================
-
   {
     path: "/staff",
     component: StaffLayout,
 
     children: [
+
+      {
+        path: "",
+        redirect: "/staff/dashboard"
+      },
 
       {
         path: "dashboard",
@@ -156,11 +194,12 @@ const routes = [
         name: "StaffRooms",
         component: StaffRooms
       },
+
       {
-  path: "bookings",
-  name: "StaffBookings",
-  component: StaffBookings
-},
+        path: "bookings",
+        name: "StaffBookings",
+        component: StaffBookings
+      },
 
       {
         path: "payments",
@@ -169,6 +208,15 @@ const routes = [
       }
 
     ]
+  },
+
+
+  // =========================
+  // 404
+  // =========================
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/rooms"
   }
 
 ]
@@ -176,7 +224,19 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    }
+
+    return {
+      top: 0,
+      behavior: "smooth"
+    }
+  }
 })
+
 
 export default router

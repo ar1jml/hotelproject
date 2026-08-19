@@ -3,7 +3,8 @@ import { ref } from "vue";
 
 import {
   faBars,
-  faXmark
+  faXmark,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 
 const menuOpen = ref(false);
@@ -105,9 +106,24 @@ const toggleMenu = () => {
       </div>
 
 
-      <button class="book-btn">
+      <!-- ACCOUNT ICON -->
+      <a
+        href="/#account"
+        class="account-link"
+        title="My Account"
+        aria-label="My Account"
+      >
+        <font-awesome-icon :icon="faUser" />
+      </a>
+
+
+      <!-- BOOK YOUR STAY -->
+      <a
+        href="/#book-now"
+        class="book-stay-btn"
+      >
         Book Your Stay
-      </button>
+      </a>
 
     </div>
 
@@ -116,10 +132,6 @@ const toggleMenu = () => {
 
 
 <style scoped>
-
-/* ========================================
-   MAIN HEADER
-======================================== */
 
 .top-header {
   width: 100%;
@@ -144,9 +156,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   LOGO
-======================================== */
+/* LOGO */
 
 .logo-container {
   display: flex;
@@ -167,9 +177,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   NAVIGATION
-======================================== */
+/* NAVIGATION */
 
 .nav {
   min-width: 0;
@@ -207,9 +215,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   CONTACT
-======================================== */
+/* CONTACT */
 
 .contact {
   display: flex;
@@ -252,16 +258,50 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   BOOK BUTTON
-======================================== */
+/* ACCOUNT ICON */
 
-.book-btn {
+.account-link {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #222;
+
+  text-decoration: none;
+
+  font-size: 20px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.account-link:hover {
+  color: white;
+
+  background: #1f4ca3;
+
+  transform: translateY(-1px);
+}
+
+
+/* BOOK YOUR STAY */
+
+.book-stay-btn {
   border: none;
 
   background: #1f4ca3;
 
   color: white;
+
+  text-decoration: none;
 
   font-size: 17px;
 
@@ -280,16 +320,14 @@ const toggleMenu = () => {
     transform 0.2s ease;
 }
 
-.book-btn:hover {
+.book-stay-btn:hover {
   background: #173d84;
 
   transform: translateY(-1px);
 }
 
 
-/* ========================================
-   HAMBURGER
-======================================== */
+/* HAMBURGER */
 
 .hamburger {
   display: none;
@@ -306,9 +344,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   LARGE TABLET
-======================================== */
+/* LARGE TABLET */
 
 @media (max-width: 1250px) {
 
@@ -348,17 +384,22 @@ const toggleMenu = () => {
     font-size: 14px;
   }
 
-  .book-btn {
+  .book-stay-btn {
     font-size: 14px;
 
     padding: 12px 18px;
   }
+
+  .account-link {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
+/* TABLET */
 
 @media (max-width: 1000px) {
 
@@ -381,7 +422,7 @@ const toggleMenu = () => {
     display: none;
   }
 
-  .book-btn {
+  .book-stay-btn {
     font-size: 14px;
 
     padding: 11px 17px;
@@ -389,9 +430,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   MOBILE
-======================================== */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -432,28 +471,27 @@ const toggleMenu = () => {
 
   .contact {
     justify-self: end;
+    gap: 8px;
   }
 
   .contact-text {
-    display: flex;
-
-    align-items: flex-end;
-
-    text-align: right;
-  }
-
-  .contact-text span {
-    font-size: 10px;
-  }
-
-  .contact-text a {
-    font-size: 10px;
+    display: none;
   }
 
 
-  /* HIDE BOOK BUTTON */
+  /* ACCOUNT */
 
-  .book-btn {
+  .account-link {
+    width: 38px;
+    height: 38px;
+
+    font-size: 18px;
+  }
+
+
+  /* BOOK BUTTON */
+
+  .book-stay-btn {
     display: none;
   }
 
@@ -514,9 +552,7 @@ const toggleMenu = () => {
 }
 
 
-/* ========================================
-   SMALL PHONES
-======================================== */
+/* SMALL PHONES */
 
 @media (max-width: 450px) {
 
@@ -529,16 +565,15 @@ const toggleMenu = () => {
     height: 52px;
   }
 
-  .contact-text span {
-    font-size: 9px;
-  }
-
-  .contact-text a {
-    font-size: 9px;
-  }
-
   .hamburger {
     font-size: 25px;
+  }
+
+  .account-link {
+    width: 34px;
+    height: 34px;
+
+    font-size: 17px;
   }
 
 }
