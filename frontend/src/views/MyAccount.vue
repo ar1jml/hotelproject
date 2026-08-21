@@ -100,36 +100,34 @@ const lostPassword = () => {
   width: 100%;
   min-height: calc(100vh - 138px);
 
+  margin: 0;
+  padding: 80px 5% 120px;
+
   box-sizing: border-box;
 
-  display: flex;
-
-  justify-content: center;
-
-  align-items: flex-start;
-
-  padding: 90px 40px 120px;
-
   background: #f8f9fa;
+
+  display: block;
 }
 
 
 /* ========================================
-   ACCOUNT CONTENT
+   FULL WIDTH ACCOUNT CONTENT
 ======================================== */
 
 .account-content {
   width: 100%;
+  max-width: none;
 
-  max-width: 750px;
+  margin: 0 auto;
 
-  background: white;
-
-  padding: 60px;
+  padding: 70px 6% 90px;
 
   box-sizing: border-box;
 
-  border-radius: 10px;
+  background: white;
+
+  border-radius: 0;
 
   box-shadow:
     0 5px 25px rgba(0, 0, 0, 0.08);
@@ -143,11 +141,11 @@ const lostPassword = () => {
 ======================================== */
 
 h1 {
-  margin: 0 0 45px;
+  margin: 0 0 55px;
 
   text-align: center;
 
-  font-size: 42px;
+  font-size: 48px;
 
   font-weight: 600;
 
@@ -164,8 +162,14 @@ h1 {
 }
 
 
+/* ========================================
+   FORM GROUP
+======================================== */
+
 .form-group {
-  margin-bottom: 30px;
+  width: 100%;
+
+  margin-bottom: 32px;
 }
 
 
@@ -174,7 +178,7 @@ h1 {
 
   margin-bottom: 12px;
 
-  font-size: 18px;
+  font-size: 19px;
 
   font-weight: 600;
 
@@ -182,13 +186,19 @@ h1 {
 }
 
 
+/* ========================================
+   INPUTS
+======================================== */
+
 .form-group input[type="text"],
 .form-group input[type="password"] {
+  display: block;
+
   width: 100%;
 
-  height: 58px;
+  height: 62px;
 
-  padding: 0 18px;
+  padding: 0 20px;
 
   box-sizing: border-box;
 
@@ -276,9 +286,11 @@ h1 {
 ======================================== */
 
 .login-button {
+  display: block;
+
   width: 100%;
 
-  height: 58px;
+  height: 62px;
 
   border: none;
 
@@ -308,25 +320,23 @@ h1 {
 
 
 /* ========================================
-   LARGE SCREENS
+   LARGE SCREEN
 ======================================== */
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
 
   .account-page {
-    padding-top: 110px;
-
-    padding-bottom: 150px;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
   .account-content {
-    max-width: 850px;
-
-    padding: 70px;
+    padding-left: 7%;
+    padding-right: 7%;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 52px;
   }
 
 }
@@ -339,13 +349,15 @@ h1 {
 @media (max-width: 900px) {
 
   .account-page {
-    padding: 70px 30px 100px;
+    padding: 60px 25px 100px;
   }
 
   .account-content {
-    max-width: 700px;
+    padding: 50px 40px 70px;
+  }
 
-    padding: 50px;
+  h1 {
+    font-size: 40px;
   }
 
 }
@@ -360,28 +372,22 @@ h1 {
   .account-page {
     min-height: calc(100vh - 138px);
 
-    padding: 50px 15px 80px;
+    padding: 40px 12px 70px;
   }
-
 
   .account-content {
-    padding: 35px 25px;
-
-    border-radius: 7px;
+    padding: 40px 20px 60px;
   }
-
 
   h1 {
     font-size: 32px;
 
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
-
 
   .form-group label {
     font-size: 16px;
   }
-
 
   .form-group input[type="text"],
   .form-group input[type="password"] {
@@ -390,16 +396,13 @@ h1 {
     font-size: 16px;
   }
 
-
   .remember label {
     font-size: 15px;
   }
 
-
   .lost-password {
     font-size: 15px;
   }
-
 
   .login-button {
     height: 52px;
